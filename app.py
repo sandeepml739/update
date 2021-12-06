@@ -25,7 +25,7 @@ def upload_file():
             f.save(os.path.join(app.config['UPLOAD_PATH'],f.filename))
             mwe = ['new york','new hampshire','new jersey','new mexico','north carolina','north dakota','south carolina','south dakota','rhode island','west virginia','post office box']
 
-            folpath = r'E:'
+            folpath = r''
             s = []
 
             for fpath in glob.glob("{0}/*".format(folpath),recursive=True):
