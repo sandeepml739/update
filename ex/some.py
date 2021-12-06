@@ -1,5 +1,5 @@
 import pandas as pd
-a = pd.read_excel('C:/Users/sandeep.mandula/Downloads/Standard streets.xlsx')
+a = pd.read_excel('Standard streets.xlsx')
 a['Unnamed: 0']=a['Unnamed: 0'].str.lower()
 a['Unnamed: 1']=a['Unnamed: 1'].str.lower()
 dict(zip(a['Unnamed: 0'], a['Unnamed: 1']))
