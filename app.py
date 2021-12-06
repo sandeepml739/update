@@ -10,7 +10,7 @@ from os.path import basename
 from flask import jsonify 
 app = Flask(__name__,template_folder='Templates')
 
-app.config["UPLOAD_PATH"] = "E:/"
+app.config["UPLOAD_PATH"] = ""
 a = pd.read_excel('Standard streets.xlsx')
 a['Unnamed: 0']=a['Unnamed: 0'].str.lower()
 a['Unnamed: 1']=a['Unnamed: 1'].str.lower()
