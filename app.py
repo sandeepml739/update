@@ -239,9 +239,9 @@ def upload_file():
     # write multiple rows
                 #writer.writerow(finalresult)
 
-        #return render_template("upload-files.html",msg="Files has been uploaded sucessfully",ll='C:/Users/sandeep.mandula/Downloads/flask/flask/final.zip')
-    #return render_template("upload-files.html",msg="Please Choose a files")
-    return jsonify({"msg":"Files has been uploaded sucessfully","ll":'C:/Users/sandeep.mandula/Downloads/flask/flask/final.zip'})
+        return render_template("upload-files.html",msg="Files has been uploaded sucessfully",ll='final.zip')
+    return render_template("upload-files.html",msg="Please Choose a files")
+    #return jsonify({"msg":"Files has been uploaded sucessfully","ll":'C:/Users/sandeep.mandula/Downloads/flask/flask/final.zip'})
 
 
 
