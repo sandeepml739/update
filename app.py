@@ -93,7 +93,7 @@ def upload_file():
                         dg.append(finalresult)
                     df = pd.DataFrame(dg)
                     
-                    df.to_csv('D:/Storing Files/'+hj1+"_finalresult.csv",index=False,header=False)
+                    df.to_csv(''+hj1+"_finalresult.csv",index=False,header=False)
                         
                     #print((dg))
                         #dg.append(finalresult)
@@ -153,7 +153,7 @@ def upload_file():
                         cg.append(finalresult)
                     df = pd.DataFrame(cg)
                     
-                    df.to_json('D:/Storing Files/'+hj1+"_finalresultjson.json",orient='records',lines=True)
+                    df.to_json(''+hj1+"_finalresultjson.json",orient='records',lines=True)
                     #df.to_json('temp.json', orient='records', lines=True)
                         
                     #print((cg))
@@ -212,9 +212,9 @@ def upload_file():
                     df = pd.DataFrame(eg,columns=['x'])
                     
                     
-                    df.to_xml('D:/Storing Files/'+hj1+"_finalresultxml.xml")
+                    df.to_xml(''+hj1+"_finalresultxml.xml")
 
-                folspath = r'D:/Storing Files/'
+                folspath = r''
                 sss=  []
 
                 for fspath in glob.glob("{0}/*".format(folspath),recursive=True):
