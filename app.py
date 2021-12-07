@@ -30,7 +30,7 @@ def upload_file():
 
             for fpath in glob.glob("{0}/*".format(folpath),recursive=True):
                 
-                #print(fpath)
+                print(fpath)
                 s.append(fpath)
             for i in s:
                 #print(i)
