@@ -40,12 +40,12 @@ def multiword_tokenize(text, mwe):
     return tokenized_text
 
 config={
-  "apiKey": "AIzaSyD1R6J8eAFBZ59vmqC2HKsKJJoX_OaexJ4",
-  "authDomain": "filestorage-2ff36.firebaseapp.com",
-  "projectId": "filestorage-2ff36",
-  "storageBucket": "filestorage-2ff36.appspot.com",
-  "messagingSenderId": "593499132447",
-  "appId": "1:593499132447:web:3e3bffab7d1ced08d57b2a",
+  "apiKey": "AIzaSyD2Kc5Vu_ZvRq0wqffWfo7Y8QytJNTdnFA",
+  "authDomain": "address-normalization-1979b.firebaseapp.com",
+  "projectId": "address-normalization-1979b",
+  "storageBucket": "address-normalization-1979b.appspot.com",
+  "messagingSenderId": "58619810635",
+  "appId": "1:58619810635:web:5265955af2a30fcf470ece",
   "measurementId": "${config.measurementId}",
   "databaseURL":""
 
