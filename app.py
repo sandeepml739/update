@@ -274,8 +274,8 @@ def upload_file():
                     for file in fi:
                         zipF.write(file,compress_type=zipfile.ZIP_DEFLATED)
                 print(zipF,'hai')
-                sotrage.child('rrzipp').put('rr.zip')
-                ll=sotrage.child('rrzipp').get_url('')
+                sotrage.child().put('rr.zip')
+                #ll=sotrage.child('rrzipp').get_url('')
                 
                 
 
@@ -291,7 +291,7 @@ def upload_file():
                 #writer.writerow(finalresult)
         
         # print(sotrage.child('zip').get_url())
-        return render_template("upload-files.html",msg="Files has been uploaded sucessfully",ll=ll)
+        return render_template("upload-files.html",msg="Files has been uploaded sucessfully")
     return render_template("upload-files.html",msg="Please Choose a files")
     #return jsonify({"msg":"Files has been uploaded sucessfully","ll":'static/final.zip'})
 
