@@ -151,7 +151,7 @@ def upload_file():
                     
                 elif f.filename[-4:]=="json":
                     cg = []
-                    data = pd.read_json(i)
+                    data = pd.read_json(f)
                     #print(data)
                     
                     data = data.rename(columns={data.columns[0]: 'Standard Streets'})
@@ -209,7 +209,7 @@ def upload_file():
                     #print(data.head())
                 elif i[-3:] == "xml":
                     eg = []
-                    data = pd.read_xml(i)
+                    data = pd.read_xml(f)
                     data = data.rename(columns={data.columns[0]: 'Standard Streets'})
                     conv1 = data['Standard Streets'].tolist()
                     c = []
