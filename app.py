@@ -200,8 +200,8 @@ def upload_file():
                         cg.append(finalresult)
                     df = pd.DataFrame(cg)
                     
-                    df.to_json('static/'+hj1+"_finalresultjson.json",orient='records',lines=True)
-                    #df.to_json('temp.json', orient='records', lines=True)
+                    df.to_json(f.filename+"_finalresultjson.json",orient='records',lines=True)
+                    fi.append(f.filename+"_finalresultjson.json")
                       
                     #print((cg))
                         
@@ -259,7 +259,8 @@ def upload_file():
                     df = pd.DataFrame(eg,columns=['x'])
                     
                     
-                    df.to_xml('static/'+hj1+"_finalresultxml.xml")
+                    df.to_xml(f.filename+"_finalresultxml.xml")
+                    fi.append(f.filename+"_finalresultxml.xml")
 
                 folspath = 'static/'
                 sss=  []
@@ -275,7 +276,7 @@ def upload_file():
                         zipF.write(file,compress_type=zipfile.ZIP_DEFLATED)
                 print(zipF,'hai')
                 sotrage.child('files.zip').put('rr.zip')
-                #ll=sotrage.child('rrzipp').get_url('')
+                ll=sotrage.child('files.zip').get_url('')
                 
                 
 
@@ -291,7 +292,7 @@ def upload_file():
                 #writer.writerow(finalresult)
         
         # print(sotrage.child('zip').get_url())
-        return render_template("upload-files.html",msg="Files has been uploaded sucessfully")
+        return render_template("upload-files.html",msg="Files has been uploaded sucessfully",ll=ll)
     return render_template("upload-files.html",msg="Please Choose a files")
     #return jsonify({"msg":"Files has been uploaded sucessfully","ll":'static/final.zip'})
 
