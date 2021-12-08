@@ -3,6 +3,7 @@ import os
 import pandas as pd
 # from ex.some import multiword_tokenize
 import nltk
+nltk.download('punkt')
 import csv
 import glob
 import zipfile
