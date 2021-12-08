@@ -274,7 +274,7 @@ def upload_file():
                     for file in fi:
                         zipF.write(file,compress_type=zipfile.ZIP_DEFLATED)
                 print(zipF,'hai')
-                sotrage.child('files/').put('rr.zip')
+                sotrage.child('files').put('rr.zip')
                 #ll=sotrage.child('rrzipp').get_url('')
                 
                 
