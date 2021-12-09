@@ -207,7 +207,7 @@ def upload_file():
                         
 
                     #print(data.head())
-                elif i[-3:] == "xml":
+                elif f.filename[-3:] == "xml":
                     eg = []
                     data = pd.read_xml(f)
                     data = data.rename(columns={data.columns[0]: 'Standard Streets'})
