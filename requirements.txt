@@ -12,3 +12,4 @@ openpyxl==3.0.9
 nltk==3.6.5
 Pyrebase==3.0.27
 lxml==4.6.4
+simplet5
