@@ -13,31 +13,15 @@ from flask import jsonify
 app = Flask(__name__,template_folder='Templates')
 app.static_url_path = app.config.get('STATIC_FOLDER')
 from nltk import word_tokenize
-from nltk.tokenize import MWETokenizer
+from simplet5 import SimpleT5
 # set the absolute path to the static folder
 app.static_folder = app.root_path + app.static_url_path
 
 
 #app.config["UPLOAD_PATH"] = "E:/"
-a = pd.read_excel('static/Standard streets.xlsx')
-a['Unnamed: 0']=a['Unnamed: 0'].str.lower()
-a['Unnamed: 1']=a['Unnamed: 1'].str.lower()
-dict(zip(a['Unnamed: 0'], a['Unnamed: 1']))
-dict1 = a.set_index('Unnamed: 0').to_dict()['Unnamed: 1']
 
-def multiword_tokenize(text, mwe):
-    # Initialize the MWETokenizer
-    print(mwe)
-    protected_tuples = [word_tokenize(word) for word in mwe]
-    protected_tuples_underscore = ['_'.join(word) for word in protected_tuples]
-    tokenizer = MWETokenizer(protected_tuples)
-    # Tokenize the text.
-    tokenized_text = tokenizer.tokenize(word_tokenize(text))
-    # Replace the underscored protected words with the original MWE
-    for i, token in enumerate(tokenized_text):
-        if token in protected_tuples_underscore:
-            tokenized_text[i] = mwe[protected_tuples_underscore.index(token)]
-    return tokenized_text
+
+
 
 config={
   "apiKey": "AIzaSyD2Kc5Vu_ZvRq0wqffWfo7Y8QytJNTdnFA",
@@ -67,7 +51,7 @@ def upload_file():
             # sotrage.child('files/'+f.filename)
             # sotrage.child(f.filename).put(f)
             # print(sotrage.child('files/'+f.filename).get_url(cc.))
-                mwe = ['new york','new hampshire','new jersey','new mexico','north carolina','north dakota','south carolina','south dakota','rhode island','west virginia','post office box']
+                
 
                 folpath = 'static/'
                 s = []
@@ -93,47 +77,13 @@ def upload_file():
                     c = []
 
                     for i in conv1:
+                        model = SimpleT5()
+                        model.from_pretrained(model_type="t5",model_name="t5-base")
+                        model.load_model('t5','static/outputs/simplet5-epoch-0-train-loss-0.1425',use_gpu=False)
+                        finalresult = model.predict(i)
+
                         
-                        #print(i)
-                        a = i.lower()
-                        a = multiword_tokenize(a, mwe)
-
-                        #a = []
-                        for i in a:
-
-                            for k,v in dict1.items():
-                                if k == i:
-                                    y=a.index(i)
-                                    a[y]=v
-                        #print(a)
-
-                        result = "" 
-
-                        for elements in a: 
-                            result += str(elements) + " " 
-
-                        result = result.title()
-
-                        cap = nltk.word_tokenize(result)
-                        y = len(cap)
-                        x=[]
-                        for i in range(0,y):
-                            if i in range(y-3,y):
-                                z=cap[i].upper()
-                                x.append(z)
-                            else:
-                                k=cap[i]
-                                x.append(k)
-
-
-                        finalresult = "" 
-
-                        for elements in x: 
-
-                            finalresult += str(elements) + " " 
-
-
-
+                        
                         #c.append(finalresult)
                         dg.append(finalresult)
                     df = pd.DataFrame(dg)
@@ -158,44 +108,14 @@ def upload_file():
                     conv1 = data['Standard Streets'].tolist()
                     c= []
                     for i in conv1:
-                        #print(i)
-                        a = i.lower()
-                        a = multiword_tokenize(a, mwe)
+                        model = SimpleT5()
+                        model.from_pretrained(model_type="t5",model_name="t5-base")
+                        model.load_model('t5','static/outputs/simplet5-epoch-0-train-loss-0.1425',use_gpu=False)
 
-                        #a = []
-                        for i in a:
-
-                            for k,v in dict1.items():
-                                if k == i:
-                                    y=a.index(i)
-                                    a[y]=v
-                        #print(a)
-
-                        result = "" 
-
-                        for elements in a: 
-                            result += str(elements) + " " 
-
-                        result = result.title()
-
-                        cap = nltk.word_tokenize(result)
-                        y = len(cap)
-                        x=[]
-                        for i in range(0,y):
-                            if i in range(y-3,y):
-                                z=cap[i].upper()
-                                x.append(z)
-                            else:
-                                k=cap[i]
-                                x.append(k)
-
-
-                        finalresult = "" 
-
-                        for elements in x: 
-
-                            finalresult += str(elements) + " " 
-
+                        finalresult = model.predict(i)
+                        
+                        
+                        
 
                         cg.append(finalresult)
                     df = pd.DataFrame(cg)
@@ -216,44 +136,11 @@ def upload_file():
                     
                     for i in conv1:
                         #print(i)
-                        a = i.lower()
-                        a = multiword_tokenize(a, mwe)
+                        model = SimpleT5()
+                        model.from_pretrained(model_type="t5",model_name="t5-base")
+                        model.load_model('t5','static/outputs/simplet5-epoch-0-train-loss-0.1425',use_gpu=False)
 
-                        #a = []
-                        for i in a:
-
-                            for k,v in dict1.items():
-                                if k == i:
-                                    y=a.index(i)
-                                    a[y]=v
-                        #print(a)
-
-                        result = "" 
-
-                        for elements in a: 
-                            result += str(elements) + " " 
-
-                        result = result.title()
-
-                        cap = nltk.word_tokenize(result)
-                        y = len(cap)
-                        x=[]
-                        for i in range(0,y):
-                            if i in range(y-3,y):
-                                z=cap[i].upper()
-                                x.append(z)
-                            else:
-                                k=cap[i]
-                                x.append(k)
-
-
-                        finalresult = "" 
-
-                        for elements in x: 
-
-                            finalresult += str(elements) + " " 
-
-
+                        finalresult = model.predict(i)
 
                         eg.append(finalresult)
                     df = pd.DataFrame(eg,columns=['x'])
