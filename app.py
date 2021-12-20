@@ -79,7 +79,7 @@ def upload_file():
                     for i in conv1:
                         model = SimpleT5()
                         model.from_pretrained(model_type="t5",model_name="t5-base")
-                        model.load_model('t5','static/outputs/simplet5-epoch-0-train-loss-0.1425',use_gpu=False)
+                        model.load_model('t5','gs://address-normalization-1979b.appspot.com/static/rename12simplet5-epoch-0-train-loss-0.0698',use_gpu=False)
                         finalresult = model.predict(i)
 
                         
@@ -110,7 +110,7 @@ def upload_file():
                     for i in conv1:
                         model = SimpleT5()
                         model.from_pretrained(model_type="t5",model_name="t5-base")
-                        model.load_model('t5','static/outputs/simplet5-epoch-0-train-loss-0.1425',use_gpu=False)
+                        model.load_model('t5','gs://address-normalization-1979b.appspot.com/static/rename12simplet5-epoch-0-train-loss-0.0698',use_gpu=False)
 
                         finalresult = model.predict(i)
                         
