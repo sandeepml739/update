@@ -13,5 +13,5 @@ Pyrebase==3.0.27
 lxml==4.6.4
 simplet5
 torch
-transformers
-pytorch-lightning
+
+
