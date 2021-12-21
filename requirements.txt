@@ -10,5 +10,4 @@ wincertstore
 pandas
 openpyxl
 Pyrebase
-nltk
 simplet5
