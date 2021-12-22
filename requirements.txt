@@ -11,4 +11,3 @@ pandas
 openpyxl
 Pyrebase
 simplet5
-.slugignore
