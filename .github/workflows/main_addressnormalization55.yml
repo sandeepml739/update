@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'AddressNormalization55'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EB29629E3FE44050A2B6E4BA78FD1CDF }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5A5D7D8257E0433484BBC0C731AFCBBD }}
