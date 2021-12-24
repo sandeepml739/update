@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request
 import os
 import pandas as pd
-# from ex.some import multiword_tokenize
+
 import csv
 import glob
 import zipfile
@@ -12,11 +12,10 @@ app = Flask(__name__,template_folder='Templates')
 app.static_url_path = app.config.get('STATIC_FOLDER')
 from nltk import word_tokenize
 from simplet5 import SimpleT5
-# set the absolute path to the static folder
+
 app.static_folder = app.root_path + app.static_url_path
 
 
-#app.config["UPLOAD_PATH"] = "E:/"
 
 
 
@@ -34,37 +33,20 @@ config={
 }
 firebase=pyrebase.initialize_app(config)
 sotrage=firebase.storage()
-# sotrage.child('files/').put(st)
 
 @app.route("/upload_file",methods=["GET","POST"])
 def upload_file():
     if request.method == 'POST':
         fi=[]
         for f in request.files.getlist('file_name'):
-        #f=request.files['file_name']
-            #f.save(os.path.join(app.config['UPLOAD_PATH'],f.filename))
-                print(app.static_folder,)
-            # f.save('static')
-            # print(f.filename,"filename")
-            # sotrage.child('files/'+f.filename)
-            # sotrage.child(f.filename).put(f)
-            # print(sotrage.child('files/'+f.filename).get_url(cc.))
+        
                 
 
                 folpath = 'static/'
                 s = []
 
-            # for fpath in glob.glob("{0}/*".format(folpath),recursive=True):
-                
-                #print(fpath)
-                # s.append(fpath)
-            # print(s,"dggfdgd")
-            # for i in s:
-                #print(i)
-                # hj= i.split("/")[1]
-                #print(hj)
+            
                 hj1 = f.filename.split(".")[0]
-                #print(hj1)
                 
                 if f.filename[-3:] == "csv":
                     dg = []
@@ -90,12 +72,7 @@ def upload_file():
                     fi.append(f.filename+'_finalresult.csv')
                     # sotrage.child(f.filename).put()
                         
-                    #print((dg))
-                        #dg.append(finalresult)
-
-                    #print(data['Standard Streets'])
-                    #data1 = (data.head())
-                    #print(data1)
+                   
                     
                 elif f.filename[-4:]=="json":
                     cg = []
