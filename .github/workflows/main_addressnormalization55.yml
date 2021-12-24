@@ -62,9 +62,9 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'AddressNormalization55'
-          creds: ${{ secrets.AZURE_CREDENTIALS555DUPLICATE }}
+          creds: ${{ secrets.AZURE_CREDENTIALS555 }}
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B834E21CE7D547E7BB2B6C870704F500 }}
+          publish-profile: ${{ secrets.AZURE_CREDENTIALS555DUPLICATE }}
     
     
     
