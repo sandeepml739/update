@@ -68,12 +68,13 @@ jobs:
         id: deploy-to-webapp
         with: # Set Azure credentials secret as an input
           
-          credentials: ${{ secrets. AZURE_CREDENTIALS555 }}
+          #credentials: ${{ secrets. AZURE_CREDENTIALS555 }}
         #env: # Or as an environment variable
           #credentials: ${{ secrets.az login AZURE_CREDENTIALS555 }}
         
           app-name: 'AddressNormalization55'
           slot-name: 'Production'
+          credentials: ${{ secrets. AZURE_CREDENTIALS555 }}
           publish-profile: ${{ secrets.AZURE_CREDENTIALS555DUPLICATE }}
     
     
