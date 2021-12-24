@@ -54,10 +54,7 @@ jobs:
           name: python-app
           path: .
       
-      - name: Sample Azure action
-        uses: azure/login@v1
-        with: # Set Azure credentials secret as an input
-         creds: ${{ secrets.AZURE_CREDENTIALS555 }}
+    
       
          
       - name: 'Deploy to Azure Web App'
