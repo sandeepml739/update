@@ -57,7 +57,9 @@ jobs:
     
       
     
-      
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS555 }}
       
       
       - name: 'Deploy to Azure Web App'
@@ -69,8 +71,12 @@ jobs:
         
           app-name: 'AddressNormalization55'
           slot-name: 'Production'
-          credentials: ${{ secrets.AZURE_CREDENTIALS555 }}
+          creds: ${{ secrets.AZURE_CREDENTIALS555 }}
           publish-profile: ${{ secrets.AZURE_CREDENTIALS555DUPLICATE }}
+          
+      - name: logout
+        run: |
+            az logout
     
     
     
