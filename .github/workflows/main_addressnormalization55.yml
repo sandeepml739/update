@@ -60,6 +60,8 @@ jobs:
       - uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS555 }}
+        env: # Or as an environment variable
+          creds: ${{ secrets.AZURE_CREDENTIALS555 }}
       
       
       - name: 'Deploy to Azure Web App'
