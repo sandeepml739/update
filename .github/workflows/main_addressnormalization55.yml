@@ -20,6 +20,8 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v1
         with:
+          creds: ${{ secrets.AZURE_CREDENTIALS555 }}
+
           python-version: '3.7'
 
       - name: Create and start virtual environment
@@ -60,4 +62,5 @@ jobs:
         with:
           app-name: 'AddressNormalization55'
           slot-name: 'Production'
+          creds: ${{ secrets.AZURE_CREDENTIALS555 }}
           publish-profile: ${{ secrets.AZURE_CREDENTIALS555 }}
