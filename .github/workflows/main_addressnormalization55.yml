@@ -57,10 +57,7 @@ jobs:
     
       
     
-      - name: Sample Azure action
-        uses: azure/webapps-deploy@v2
-        with: # Set Azure credentials secret as an input
-          credentials: ${{ secrets.AZURE_CREDENTIALS555 }}
+      
       
       
       - name: 'Deploy to Azure Web App'
@@ -68,9 +65,7 @@ jobs:
         id: deploy-to-webapp
         with: # Set Azure credentials secret as an input
           
-          #credentials: ${{ secrets. AZURE_CREDENTIALS555 }}
-        #env: # Or as an environment variable
-          #credentials: ${{ secrets.az login AZURE_CREDENTIALS555 }}
+          
         
           app-name: 'AddressNormalization55'
           slot-name: 'Production'
