@@ -61,3 +61,12 @@ jobs:
           app-name: 'AddressNormalization55'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B834E21CE7D547E7BB2B6C870704F500 }}
+    
+    
+      - name: Sample Azure action
+        with: # Set Azure credentials secret as an input
+         credentials: ${{ secrets.AZURE_CREDENTIALS555 }}
+        env: # Or as an environment variable
+         credentials: ${{ secrets.AZURE_CREDENTIALS555 }}
+  
+  
