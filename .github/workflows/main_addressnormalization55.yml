@@ -54,10 +54,17 @@ jobs:
           name: python-app
           path: .
           
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+        env: 
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
           app-name: 'AddressNormalization55'
           slot-name: 'Production'
+          
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_305EC425F8984C9399A233F5A2F369F3 }}
