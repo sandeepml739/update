@@ -7,7 +7,7 @@ Jinja2
 MarkupSafe
 Werkzeug
 wincertstore
-pandas
+pandas==1.3.5
 openpyxl
 Pyrebase
 simplet5
