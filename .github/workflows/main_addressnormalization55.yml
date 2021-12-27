@@ -53,34 +53,11 @@ jobs:
         with:
           name: python-app
           path: .
-      
-    
-      
-    
-      - uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-        env: # Or as an environment variable
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-      
-      
+          
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
-        with: # Set Azure credentials secret as an input
-          
-          
-        
+        with:
           app-name: 'AddressNormalization55'
           slot-name: 'Production'
-          #creds: ${{ secrets.AZURE_CREDENTIALS555 }}
-          publish-profile: ${{ secrets.AZURE_PUBLISH }}
-          
-      - name: logout
-        run: |
-            az logout
-    
-    
-    
-  
-  
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_305EC425F8984C9399A233F5A2F369F3 }}
