@@ -57,12 +57,12 @@ jobs:
       
       - uses: azure/webapps-deploy@v1
         with: # Set Azure credentials secret as an input
-          credentials: ${{ secrets.AZURE_CREDENTIALS }}
-        #env: # Or as an environment variable
-          #credentials: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+        env: # Or as an environment variable
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
         
-      - run: |
-          az webapp list --query "[?state=='Running']"
+      #- run: |
+          #az webapp list --query "[?state=='Running']"
         
           
       - name: 'Deploy to Azure Web App'
