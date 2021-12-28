@@ -57,7 +57,13 @@ jobs:
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
-        with:
+   
+      - name: Sample Azure action
+        with: # Set Azure credentials secret as an input
+          credentials: ${{ secrets.AZURE_CREDENTIALS }}
+        env: # Or as an environment variable
+          credentials: ${{ secrets.AZURE_CREDENTIALS }}
+        #with:
           app-name: 'Webappaddress'
           slot-name: 'Production'
           publish-profile: '${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8E105946AE5940FF90841598104A7D02 }}'
