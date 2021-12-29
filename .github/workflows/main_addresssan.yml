@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v1
         with:
-          python-version: '3.9'
+          python-version: '3.7'
 
       - name: Create and start virtual environment
         run: |
@@ -54,18 +54,10 @@ jobs:
           name: python-app
           path: .
           
-      - uses: azure/login@v1
-        with:
-           creds: ${{ secrets.AZURE_CREDENTIALS }}
-        env:
-           creds: ${{ secrets.AZURE_CREDENTIALS }}
-          
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
           app-name: 'addresssan'
           slot-name: 'Production'
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_13E058B235224CBFBF1113AD35506E81 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B10396EE21004E8CAA8744A080EDE524 }}
