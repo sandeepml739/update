@@ -71,4 +71,4 @@ jobs:
           app-name: 'addresssan'
           slot-name: 'Production'
           #creds: ${{ secrets.AZURE_CREDENTIALS }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D8FAD96EF5F14DA0BF53DF0EBCC51B9E }}
+          #publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D8FAD96EF5F14DA0BF53DF0EBCC51B9E }}
