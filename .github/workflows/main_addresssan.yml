@@ -15,14 +15,16 @@ jobs:
     
     - uses: azure/login@v1
       with:
+        app-name: 'addresssan'
+        slot-name: 'Production'
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         
-    - name: 'Deploy to Azure Web App'
-      uses: azure/webapps-deploy@v2
-      id: deploy-to-webapp
-      with:
-          app-name: 'addresssan'
-          slot-name: 'Production'
+    #- name: 'Deploy to Azure Web App'
+      #uses: azure/webapps-deploy@v2
+      #id: deploy-to-webapp
+      #with:
+          #app-name: 'addresssan'
+          #slot-name: 'Production'
     
     - run: |
         az webapp list --query "[?state=='Running']"
